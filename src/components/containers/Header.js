@@ -14,7 +14,6 @@ import {
   Row
 } from "reactstrap";
 import Styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import logoMobile from "../../assets/logoMobile.png";
 import logoDesktop from "../../assets/logoDesktop.png";
@@ -25,7 +24,6 @@ const AppBar = Styled(Navbar)`
   margin-top: 30px;
   padding-bottom: .5px !important;
   height: 70px;
-  position: absolute;
   top: 0;
 
   .container{
@@ -37,6 +35,7 @@ const AppBar = Styled(Navbar)`
 
   .navbar{
     padding: 0 !important;
+    margin: auto !important;
   }
 
   .navbar-brand {

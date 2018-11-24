@@ -296,6 +296,7 @@ export default class Home2 extends Component {
               previous={this.previous}
               className="carousel-fade"
               interval="2000"
+              pause={false}
             >
               {/* <CarouselIndicators
                   items={items}
