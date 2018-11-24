@@ -4,7 +4,7 @@ import AboutCard from "./AboutCard";
 import { Row, Col } from "reactstrap";
 
 const StyledAbout = Styled.div`
-  background: #F0F1F1;
+  background: #F1F1F1;
   height: auto;
   .col1{
     .aboutTitle{

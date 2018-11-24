@@ -5,23 +5,22 @@ import { Col } from "reactstrap";
 import Weather from "./Weather";
 import Suggestions from "../components/Suggestions";
 
-import prepare_allergy from "../img/prepare_disease@1x.svg";
+import prepare_allergy from "../../../assets/prepare_allergy@1x.svg";
 
 // import SimplePieChart from "./SimplePieChart";
-// let suggestions = require("../static/air-quality.json");
+let suggestions = require("../static/air-quality.json");
 
-class AirQualityBr extends React.Component {
+class AirQuality extends React.Component {
   constructor() {
     super();
     this.state = {
       loaded: false,
-      aqi: 0,
       info: { info: {} },
       risk: ""
     };
     this.getAirQuality = this.getAirQuality.bind(this);
     this.getSuggestions = this.getSuggestions.bind(this);
-    // this.getRisk = this.getRisk.bind(this);
+    this.getRisk = this.getRisk.bind(this);
   }
 
   componentDidMount() {
@@ -55,25 +54,19 @@ class AirQualityBr extends React.Component {
           lon: response.data.candidates[0].geometry.location.lng
         });
         return axios.get(
-          `https://api.breezometer.com/air-quality/v2/current-conditions?lat=${
+          `https://api.airvisual.com/v2/nearest_city?lat=${
             this.state.lat
-          }&lon=${
-            this.state.lon
-          }&key=8d0bc1d42b204dd3af3664c6d2320428&features=breezometer_aqi,health_recommendations`
+          }&lon=${this.state.lon}&key=eFTPQgYjY7EtnRLik`
         );
       })
       .then(response => {
-        // aqi: response.data.current.pollution.aqi;
-        if (response.data !== null) {
-          this.setState({
-            aqi: response.data.data.indexes.baqi.aqi,
-            info: { info: response.data.data.health_recommendations },
-            risk: response.data.data.indexes.baqi.category.split(" ")[0],
-            loaded: true
-          });
-        }
-        // this.getSuggestions();
-        // this.getRisk();
+        // aqius: response.data.current.pollution.aqius;
+        this.setState({
+          aqius: response.data.data.current.pollution.aqius,
+          loaded: true
+        });
+        this.getSuggestions();
+        this.getRisk();
       })
       .catch(function(error) {
         console.log("Request failed", error);
@@ -81,14 +74,42 @@ class AirQualityBr extends React.Component {
   };
 
   getSuggestions() {
-    // let formated = {};
+    for (var i = 0; i < suggestions.length; i++) {
+      if (
+        this.state.aqius > suggestions[i].aqi[0] &&
+        this.state.aqius < suggestions[i].aqi[1]
+      ) {
+        this.setState({
+          info: {
+            info: suggestions[i].info
+          }
+        });
+        // return null;
+      }
+    }
+  }
+
+  getRisk() {
+    for (let i = 0; i < suggestions.length; i++) {
+      if (
+        this.state.aqius > suggestions[i].aqi[0] &&
+        this.state.aqius < suggestions[i].aqi[1]
+      ) {
+        this.setState({
+          risk:
+            suggestions[i].risk.charAt(0).toUpperCase() +
+            suggestions[i].risk.slice(1) +
+            " risk"
+        });
+      }
+    }
   }
 
   render() {
     return (
       <React.Fragment>
         <Col xs="12">
-          <h1>Air Quality and Weather Forecast of {this.props.country}</h1>
+          <h1>Air Quality and Weather Forecast</h1>
         </Col>
         <Col
           sm="12"
@@ -97,9 +118,10 @@ class AirQualityBr extends React.Component {
         >
           {this.state.loaded && (
             <React.Fragment>
-              <AirQualityPieChart aqi={this.state.aqi} max={100} rev={true} />
+              <h4>Air Quality</h4>
+              <AirQualityPieChart aqi={this.state.aqius} max={200} />
               <div className="aqinfo">
-                <strong>{this.state.aqi}</strong>
+                <strong>{this.state.aqius}</strong>
                 <span>{this.state.risk}</span>
               </div>
             </React.Fragment>
@@ -119,4 +141,4 @@ class AirQualityBr extends React.Component {
   }
 }
 
-export default AirQualityBr;
+export default AirQuality;

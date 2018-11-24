@@ -5,7 +5,7 @@ import "whatwg-fetch";
 import Buttons from "../components/Buttons";
 import { Row, Col } from "reactstrap";
 
-import prepare_disease from "../img/prepare_allergy@1x.svg";
+import prepare_disease from "../../../assets/prepare_allergy@1x.svg";
 
 class ChartContainer extends Component {
   constructor(props) {

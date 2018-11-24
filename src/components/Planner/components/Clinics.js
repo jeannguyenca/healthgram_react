@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Button } from "reactstrap";
-import clinic from "../img/listclinic@1x.svg";
+import clinic from "../../../assets/listclinic@1x.svg";
 
 import { FaArrowAltCircleDown } from "react-icons/fa";
 

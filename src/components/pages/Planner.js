@@ -1,26 +1,40 @@
 import React, { Component } from "react";
-import Planner from "../../Planner/containers/Planner";
+import PlannerDisplay from "../Planner/containers/PlannerDisplay";
 import { Row, Col, Button } from "reactstrap";
-import plan from "../../Planner/img/plan@1x.svg";
+import plan from "../../assets/plan@1x.svg";
+import { Redirect } from "react-router-dom";
+import ScrollableAnchor, { goToAnchor } from "react-scrollable-anchor";
+import { configureAnchors } from "react-scrollable-anchor";
+
+configureAnchors({ offset: -50, scrollDuration: 200 });
 
 class PlannerPage extends Component {
   constructor() {
     super();
     this.state = {
-      isNewPlan: null
+      isNewPlan: null,
+      redirect:false
     };
     this.handleButtons = this.handleButtons.bind(this);
   }
 
   handleButtons(e) {
-    if (e.target.id === "newPlan") {
-      this.setState({ isNewPlan: true });
-    } else if (e.target.id === "editPlan") {
-      this.setState({ isNewPlan: false });
+    if (sessionStorage.getItem("userData")) {
+      if (e.target.id === "newPlan") {
+          this.setState({ isNewPlan: true });
+          goToAnchor("section1");
+      } else if (e.target.id === "editPlan") {
+        this.setState({ isNewPlan: false });
+      }
+    } else {
+      this.setState({ redirect: true })
     }
   }
 
   render() {
+    if(this.state.redirect){
+      return <Redirect to='/Signin' />;
+    }
     return (
       <React.Fragment>
         <section className="plannerLanding">
@@ -31,6 +45,7 @@ class PlannerPage extends Component {
               <form>
                 <Button
                   color="primary"
+                  outline
                   key="newPlan"
                   id="newPlan"
                   onClick={this.handleButtons}
@@ -53,7 +68,9 @@ class PlannerPage extends Component {
             </Col>
           </Row>
         </section>
-        <section>{this.state.isNewPlan && <Planner />}</section>
+          <ScrollableAnchor id={"section1"}>
+            <section>{this.state.isNewPlan && <PlannerDisplay />}</section>
+          </ScrollableAnchor>
       </React.Fragment>
     );
   }

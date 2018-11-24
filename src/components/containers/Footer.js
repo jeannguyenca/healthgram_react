@@ -29,9 +29,9 @@ const IconList = Styled(Nav)`
 
 
   .nav-item:hover, .nav-item:focus{
-    background-color: black;
+    background-color: none !important;
     &:hover i, &:focus i{
-      color:#F5F5F5;
+        color: #0079ff;
     }
   }
 
@@ -54,9 +54,9 @@ const IconList = Styled(Nav)`
 
 
     .nav-item:hover, .nav-item:focus{
-      background-color: white;
+      background-color: none !important;
       &:hover i, &:focus i{
-        color: black;
+        color: #0079ff;
       }
     }
 

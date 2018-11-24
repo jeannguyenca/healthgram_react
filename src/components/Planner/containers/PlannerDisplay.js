@@ -1,16 +1,18 @@
 import React, { Component } from "react";
-import { Container, Row, Button } from "reactstrap";
+import { Container, Col, Row, Button } from "reactstrap";
 import ChartContainer from "./ChartContainer";
 import MapHandle from "./MapHandle";
 // import AirQuality from "./AirQuality";
 import AirQualityBr from "./AirQualityBr";
 import Clinics from "../components/Clinics";
+import ScrollableAnchor, { goToAnchor } from "react-scrollable-anchor";
+// import { configureAnchors } from "react-scrollable-anchor";
 // import AnimatedMap from "./components/SimpleMap";
 // import Weather from "./Weather";
 
 // import AutoSuggest from "./components/AutoSuggest";
 
-class Planner extends Component {
+class PlannerDisplay extends Component {
   constructor() {
     super();
     this.myRef = React.createRef();
@@ -31,6 +33,7 @@ class Planner extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.setState({ value: this.inputRef.current.value, showData: true });
+    goToAnchor("section2");
   };
 
   render() {
@@ -54,12 +57,16 @@ class Planner extends Component {
         </Row>
         <Container>
           {/* Chart component */}
-          {this.state.showData && (
+
+          {this.state.showData && <ScrollableAnchor id={"section2"}>
             <ChartContainer
               show={this.state.showData}
               country={this.state.value}
             />
-          )}
+          </ScrollableAnchor>
+
+          }
+
           <Row className="airContainter">
             {/* Air Quality */}
             {this.state.showData && (
@@ -78,9 +85,31 @@ class Planner extends Component {
             {this.state.showData && <Clinics />}
           </Row>
         </Container>
+        {this.state.showData && (
+          <Row className="addPlan">
+            <Container>
+              <Col md={{ size: 10, offset: 1 }}>
+                <h2>Ready to add plan?</h2>
+                <p>
+                  Finish your plan by adding it to your profile. You can edit
+                  your plan anytime you want by going to your profile setting.
+                </p>
+                <div className="form">
+                  <strong>Enter plan name</strong>
+                  <form>
+                    <input type="text" />
+                    <Button color="primary" outline>
+                      Add plan
+                    </Button>
+                  </form>
+                </div>
+              </Col>
+            </Container>
+          </Row>
+        )}
       </div>
     );
   }
 }
 
-export default Planner;
+export default PlannerDisplay;

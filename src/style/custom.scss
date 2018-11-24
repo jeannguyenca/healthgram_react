@@ -20,10 +20,7 @@ button {
 }
 
 .container-fluid {
-  padding: 0;
-}
-.planner{
-  min-height: 100vh;
+  padding: 0 !important;
 }
 .row:not(.mapContainer) {
   margin-top: 30px;
@@ -50,9 +47,11 @@ h1{
     color: black !important;
   }
   .landing {
-    height: 100vh;
+    min-height: 90vh;
     padding: 0;
     margin: 0;
+    margin-top: -50px;
+
     h1 {
       text-align: left;
     }
@@ -69,6 +68,10 @@ h1{
     }
   }
 }
+.planner{
+  min-height: 100vh;
+}
+
 .mapContainer {
   display: flex;
   height: 300px;
@@ -85,6 +88,7 @@ h1{
       width: 100%;
       display: block;
       text-align: center;
+      margin-bottom: 10px;
     }
     input {
       background: none;
@@ -95,6 +99,12 @@ h1{
       text-align: center;
       width: 200px;
       text-align: center;
+      margin-bottom: 10px;
+
+      &:focus {
+        border-color: $primary;
+        outline: none;
+      }
     }
     button {
       display: block;
@@ -268,6 +278,52 @@ h1{
       margin-left: 5px;
       margin-bottom: 2px;
     }
+  }
+}
+
+.addPlan{
+  background: rgba(0, 0, 0, 0.8) url(../assets/addplan_bg.jpeg);
+  background-blend-mode: multiply;
+  background-size: cover;
+
+  margin: 0 !important;
+  padding: 60px 0 !important;
+
+  width: 100%;
+
+  div>div{
+    padding: 0;
+  }
+
+  h2, p, strong{
+    color: white;
+  }
+  .form{
+    width: 100%;
+  }
+  form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  input {
+    background: none;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    display: block;
+    width: 80%;
+
+    &:focus {
+      border-color: $primary;
+      outline: none;
+    }
+  }
+
+  button{
+    border-color: white;
+    color: white;
   }
 }
 

@@ -19,11 +19,6 @@ import { Link } from "react-router-dom";
 import logoMobile from "../../assets/logoMobile.png";
 import logoDesktop from "../../assets/logoDesktop.png";
 
-const Rlink = Styled(Link)`
-  text-decoration: none !important;
-  // font-weight: bold;
-`;
-
 const AppBar = Styled(Navbar)`
   z-index: 1000;
   transition: all .1s linear;
@@ -33,8 +28,18 @@ const AppBar = Styled(Navbar)`
   position: absolute;
   top: 0;
 
-  .navbar-brand {
+  .container{
+    padding: 0;
+    div{
+      padding: 0;
+    }
+  }
 
+  .navbar{
+    padding: 0 !important;
+  }
+
+  .navbar-brand {
     a {
       display: flex;
       flex-flow: row nowrap;
@@ -134,7 +139,8 @@ const AppBar = Styled(Navbar)`
     margin: auto 6px;
   }
   .signIn{
-    padding: 2px 5px;
+    padding: 0px 5px;
+    margin-top: -3px;
     width: 120px;
     
   }
@@ -180,48 +186,59 @@ export default class Example extends React.Component {
 
   render() {
     const { headFontColor, headColor, isOpen } = this.state;
-
     return (
       <Container fluid={true}>
-        <AppBar
-          dark
-          expand="md"
-        >
+        <AppBar dark expand="md">
           <Container>
-            <NavbarBrand className="logoPart" href="/">
-              <Row>
-                <Col>
+            <Col xs="2">
+              <NavbarBrand className="logoPart" href="/">
+                <Row>
+                  <Col>
                     <figure className="logoMobile">
                       <img src={logoMobile} alt=" Logo Mobile" />
                     </figure>
                     <figure className="logoDesktop">
                       <img src={logoDesktop} alt=" Logo Desktop" />
                     </figure>
-                </Col>
-              </Row>
-            </NavbarBrand>
-
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
+                  </Col>
+                </Row>
+              </NavbarBrand>
+            </Col>
+            <Col xs="5">
+              <NavbarToggler onClick={this.toggle} />
+              <Collapse isOpen={isOpen} navbar>
+                <Nav className="ml-auto" navbar>
+                  <NavItem>
                     <NavLink className="nl" href="/Planner">
                       Planner
                     </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink className="nl" href="/Partner">Partners</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nl" href="/Pricing">Pricing</NavLink>
-                </NavItem>
-                <NavItem className="signIn">
-                  <NavLink href="/Signin">
-                      <Button color="primary">Sign in</Button>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nl" href="/Partner">
+                      Partners
                     </NavLink>
-                </NavItem>
-              </Nav>
-            </Collapse>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nl" href="/Pricing">
+                      Pricing
+                    </NavLink>
+                  </NavItem>
+                  {sessionStorage.getItem("userData") ? (
+                    <NavItem className="signIn">
+                      <NavLink href="/Profile">
+                        <Button color="primary">Profile</Button>
+                      </NavLink>
+                    </NavItem>
+                  ) : (
+                    <NavItem className="signIn">
+                      <NavLink href="/Signin">
+                        <Button color="primary">Sign in</Button>
+                      </NavLink>
+                    </NavItem>
+                  )}
+                </Nav>
+              </Collapse>
+            </Col>
           </Container>
         </AppBar>
       </Container>
