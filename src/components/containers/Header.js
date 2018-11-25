@@ -13,6 +13,7 @@ import {
   Col,
   Row
 } from "reactstrap";
+import { NavLink as RRNavLink } from "react-router-dom";
 import Styled from "styled-components";
 
 import logoMobile from "../../assets/logoMobile.png";
@@ -208,17 +209,32 @@ export default class Example extends React.Component {
               <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink className="nl" href="/Planner">
+                    <NavLink
+                      className="nl"
+                      to="/Planner"
+                      activeClassName="current"
+                      tag={RRNavLink}
+                    >
                       Planner
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink className="nl" href="/Partner">
+                    <NavLink
+                      className="nl"
+                      to="/Partner"
+                      activeClassName="current"
+                      tag={RRNavLink}
+                    >
                       Partners
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink className="nl" href="/Pricing">
+                    <NavLink
+                      className="nl"
+                      to="/Pricing"
+                      activeClassName="current"
+                      tag={RRNavLink}
+                    >
                       Pricing
                     </NavLink>
                   </NavItem>

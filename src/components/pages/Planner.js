@@ -45,7 +45,6 @@ class PlannerPage extends Component {
               <form>
                 <Button
                   color="primary"
-                  outline
                   key="newPlan"
                   id="newPlan"
                   onClick={this.handleButtons}

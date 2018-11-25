@@ -3,8 +3,7 @@ import {Redirect} from 'react-router-dom';
 import './Profile.css';
 import { FaPowerOff, FaUserEdit, FaMoneyCheck, FaRegCalendarAlt } from "react-icons/fa";
 
-import { Alert, Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText, Card, CardImg, CardText, CardBody,
-  CardTitle,  } from 'reactstrap';
+import { Container, Row, Col, Button, Card, CardText, CardBody, CardTitle } from 'reactstrap';
 import JumbotronProfile from "./Jumbo";
 import {  CardLink } from 'reactstrap';
 class Profile extends Component {
