@@ -48,9 +48,12 @@ class ChartContainer extends Component {
     })
       .then(data => data.json())
       .then(res => {
-        if (!res.success) this.setState({ error: res.error });
-        else {
+        if (!res.success) {
+          console.log("Cannot get it");
+          this.setState({ error: res.error });
+        } else {
           //diseases info
+          console.log("Finished");
           this.setState({ diseases: res.data[res.data.length - 1] });
 
           //disease values
