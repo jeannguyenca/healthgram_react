@@ -191,22 +191,24 @@ class Login extends Component {
                     <Form>
                       <TheInput>
                         <div class="testInput">
-                          <input
-                            name="name"
+                          <Input
+                            name="username"
                             type="text"
                             placeholder="Your Name*"
+                            onChange={this.onChange}
                           />
                           <label> Your Name*</label>
                         </div>
                       </TheInput>
                       <TheInput>
                         <div class="testInput">
-                          <input
-                            name="name"
-                            type="text"
-                            placeholder="Your Name*"
+                          <Input
+                            name="password"
+                            type="password"
+                            placeholder="Your password*"
+                            onChange={this.onChange}
                           />
-                          <label> Your Name*</label>
+                          <label> Your password*</label>
                         </div>
                       </TheInput>
                       <Button
