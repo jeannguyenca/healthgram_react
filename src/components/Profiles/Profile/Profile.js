@@ -75,8 +75,12 @@ class Profile extends Component {
 
    
       let now = this.state.date_of_birth;
-      let today = now.split(" ")[0];
-      let news = today.toString();
+      let today;
+      let news;
+      if(now!==null){
+        today = now.split(" ")[0];
+        news = today.toString();
+      }
 
     
     return (

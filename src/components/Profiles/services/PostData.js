@@ -1,5 +1,5 @@
 export function PostData(type, userData) {
-    let BaseURL = 'http://ec2-34-207-252-72.compute-1.amazonaws.com/~LS_user5/hg-api/';
+    let BaseURL = 'http://kunaldandona.com/php/';
 
     return new Promise((resolve, reject) =>{
     
