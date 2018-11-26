@@ -1,5 +1,5 @@
 export function PostData(type, userData) {
-  let BaseURL = `${"https://cors-anywhere.herokuapp.com/"}http://kunaldandona.com/php/`;
+  let BaseURL = `${"https://cors-anywhere.herokuapp.com/"}https://kunaldandona.com/php/`;
 
     return new Promise((resolve, reject) =>{
     
