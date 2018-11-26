@@ -19,16 +19,16 @@ class PlannerPage extends Component {
   }
 
   handleButtons(e) {
-    if (sessionStorage.getItem("userData")) {
+    // if (sessionStorage.getItem("userData")) {
       if (e.target.id === "newPlan") {
           this.setState({ isNewPlan: true });
           goToAnchor("section1");
       } else if (e.target.id === "editPlan") {
         this.setState({ isNewPlan: false });
       }
-    } else {
-      this.setState({ redirect: true })
-    }
+    // } else {
+      // this.setState({ redirect: true })
+    // }
   }
 
   render() {
