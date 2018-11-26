@@ -3,6 +3,13 @@ import Styled from "styled-components";
 import AboutCard from "./AboutCard";
 import { Row, Col } from "reactstrap";
 
+import jean from "../../assets/members/jean.png";
+import khanh from "../../assets/members/khanh.png";
+import anh from "../../assets/members/anh.png";
+import anu from "../../assets/members/anu.png";
+import kunal from "../../assets/members/jean.png";
+import andra from "../../assets/members/jean.png";
+
 const StyledAbout = Styled.div`
   background: #F1F1F1;
   height: auto;
@@ -42,42 +49,48 @@ export default class AboutUS extends React.Component {
           <Row>
             <Col lg={{ size: 4, offset: 1 }}>
               <AboutCard
-                link="https://www.straight.com/files/v3/styles/gs_large/public/2015/01/MarcEmery1_150115_0.jpg?itok=QxTr8qDX"
+                link={jean}
                 title="Giang Nguyen"
-                subtitle="Project Manager"
+                subtitle="PM/Full Stack Developer"
                 linkedLink=""
+                alt="Jean Nguyen"
               />
               <AboutCard
-                link="https://www.straight.com/files/v3/styles/gs_large/public/2015/01/MarcEmery1_150115_0.jpg?itok=QxTr8qDX"
+                link={khanh}
                 title="Khanh Dinh"
-                subtitle="UX / UI Designer"
+                subtitle="Lead UX/UI Designer"
                 linkedLink=""
+                alt="Khanh Dinh"
               />
               <AboutCard
-                link="https://www.straight.com/files/v3/styles/gs_large/public/2015/01/MarcEmery1_150115_0.jpg?itok=QxTr8qDX"
+                link={anh}
                 title="Anh Pham"
-                subtitle="Business Strategist"
+                subtitle="UX Designer/Business Strategist"
                 linkedLink=""
+                alt="Anh Pham"
               />
             </Col>
             <Col lg={{ size: 4, offset: 2 }}>
               <AboutCard
-                link="https://www.straight.com/files/v3/styles/gs_large/public/2015/01/MarcEmery1_150115_0.jpg?itok=QxTr8qDX"
-                title="Marc Emery"
-                subtitle="Canabis activist"
+                link={anu}
+                title="Anu Joshi"
+                subtitle="Back-end Developer"
                 linkedLink=""
+                alt="Anu Joshi"
               />
               <AboutCard
-                link="https://www.straight.com/files/v3/styles/gs_large/public/2015/01/MarcEmery1_150115_0.jpg?itok=QxTr8qDX"
-                title="Marc Emery"
-                subtitle="Canabis activist"
+                link={kunal}
+                title="Kunal Dandonal"
+                subtitle="Front-end Developer"
                 linkedLink=""
+                alt="Kunal Dandonal"
               />
               <AboutCard
-                link="https://www.straight.com/files/v3/styles/gs_large/public/2015/01/MarcEmery1_150115_0.jpg?itok=QxTr8qDX"
-                title="Marc Emery"
-                subtitle="Canabis activist"
+                link={andra}
+                title="Raditya Iskanda"
+                subtitle="Front-end Developer/QA"
                 linkedLink=""
+                alt="Raditya Iskanda"
               />
             </Col>
           </Row>

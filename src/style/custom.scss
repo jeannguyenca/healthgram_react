@@ -89,26 +89,30 @@ h1{
   form {
     position: absolute;
     z-index: 999;
-
     margin-top: -40px;
+
+    div{
+      display: flex;
+      flex-wrap: wrap;
+    }
     strong {
       color: white;
       text-align: center;
       width: 100%;
       display: block;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
     input {
       background: none;
       color: white;
       border: 1px solid white;
       border-radius: 20px;
-      display: block;
       text-align: center;
       width: 200px;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      height: 35px;
 
       &:focus {
         border-color: $primary;
@@ -117,7 +121,10 @@ h1{
     }
     button {
       display: block;
-      margin: 5px auto;
+      margin-left: 10px;
+      padding-top: 4px !important;
+      padding-bottom: 4px !important;
+      height: 36px;
     }
   }
   #map {

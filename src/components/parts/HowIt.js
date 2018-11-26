@@ -8,7 +8,7 @@ const Container1 = Styled.div`
   margin: 24px auto 0 auto;
   padding-top: 50px;
   padding-bottom: 50px;
-  background: #F0F1F1;
+  // background: #F0F1F1;
 
   p{
     font-size: 16px;

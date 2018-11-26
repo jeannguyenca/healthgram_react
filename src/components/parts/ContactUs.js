@@ -170,13 +170,13 @@ export default class ContactUs extends React.Component {
             <TheInput>
               <div class="testInput">
                 <input name="name" type="text" placeholder="Your Name*" />
-                <label for="dynamic-label-input"> Your Name*</label>
+                <label> Your Name*</label>
               </div>
             </TheInput>
             <TheInput>
               <div class="testInput">
                 <input name="email" type="text" placeholder="Email*" />
-                <label for="dynamic-label-input">Email*</label>
+                <label>Email*</label>
               </div>
             </TheInput>
             <TheInput>

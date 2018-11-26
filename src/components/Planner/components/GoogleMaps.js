@@ -21,6 +21,8 @@ import {
 //   textAlign: "center"
 // };
 
+import marker from "../../../assets/marker.svg";
+
 const maps = compose(
   withProps({
     googleMapURL:
@@ -32,6 +34,14 @@ const maps = compose(
   withScriptjs,
   withGoogleMap
 )(props => {
+  let { latLng } = props;
+  let { lat, lng } = latLng;
+
+  let markerPosition = {
+    lat: lat - 1.8,
+    lng: lng
+  };
+
   return (
     <GoogleMap
       defaultZoom={4}
@@ -42,8 +52,14 @@ const maps = compose(
       }}
     >
       {props.isMarkerShown && (
-        <Marker position={props.latLng}
-        // icon={markerStyling} 
+        <Marker
+          position={markerPosition}
+          // icon={{
+          // url: {marker},
+          // scaledSize: {width: 30, height: 30},
+          // anchor: {x: 15, y: 15 },
+          // }}
+          icon={{ url: marker }}
         />
       )}
     </GoogleMap>

@@ -117,7 +117,8 @@ class About extends React.Component {
       linkedLink,
       title,
       subtitle,
-      link
+      link,
+      alt
     } = this.state;
     return (
       <StyleCard>
@@ -126,7 +127,7 @@ class About extends React.Component {
           width="100%"
           height="auto"
           src={link}
-          alt="Card image cap"
+          alt={alt}
         />
         <CardBody>
           <CardTitle>{title}</CardTitle>

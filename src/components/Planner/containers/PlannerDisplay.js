@@ -44,15 +44,17 @@ class PlannerDisplay extends Component {
           <MapHandle country={this.state.value} />
           <form onSubmit={this.handleSubmit}>
             <strong>Enter a location</strong>
-            <input
-              ref={this.inputRef}
-              type="text"
-              onChange={this.onChangeText}
-              placeholder="Enter a country"
-            />
-            <Button color="primary" key="search">
-              Submit
+            <div>
+              <input
+                ref={this.inputRef}
+                type="text"
+                onChange={this.onChangeText}
+                placeholder="Enter a country"
+              />
+              <Button color="primary" key="search">
+                Submit
             </Button>
+            </div>
           </form>
         </Row>
         <Container>
