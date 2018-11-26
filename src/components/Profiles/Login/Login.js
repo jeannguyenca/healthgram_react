@@ -215,8 +215,7 @@ class Login extends Component {
                         color="primary"
                         outline
                         type="submit"
-                        onClick={this.login}
-                      >
+                        onClick={this.login}>
                         Sign In
                       </Button>
                     </Form>
