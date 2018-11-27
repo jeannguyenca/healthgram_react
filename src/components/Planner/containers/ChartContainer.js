@@ -40,10 +40,12 @@ class ChartContainer extends Component {
   }
 
   loadDataFromServer = () => {
-    fetch(`api/databases/${this.props.country}`, {
+    fetch(`${"https://cors-anywhere.herokuapp.com/"}https://secure-springs-43195.herokuapp.com/api/databases/${this.props.country}`, {
+      mode: 'cors',
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
+        
       }
     })
       .then(data => data.json())
