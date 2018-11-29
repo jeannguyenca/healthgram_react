@@ -194,7 +194,7 @@ class Login extends Component {
                           <Input
                             name="username"
                             type="text"
-                            placeholder="Your Name*"
+                            placeholder="Username"
                             onChange={this.onChange}
                           />
                           <label> Your Name*</label>
@@ -205,7 +205,7 @@ class Login extends Component {
                           <Input
                             name="password"
                             type="password"
-                            placeholder="Your password*"
+                            placeholder="Password"
                             onChange={this.onChange}
                           />
                           <label> Your password*</label>

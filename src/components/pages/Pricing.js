@@ -1,63 +1,89 @@
 import React from "react";
 import Styled from "styled-components";
-import { Col, Button } from "reactstrap";
-
+import { Container, Row, Col } from "reactstrap";
+import {
+  Card,
+  Button,
+  CardImg,
+  CardTitle,
+  CardText,
+  CardGroup,
+  CardSubtitle,
+  CardBody
+} from "reactstrap";
 
 const Container1 = Styled.div`
-
   padding: 16px auto;
-  margin: 140px auto;
+  margin: 140px auto !important;
   
-  h2{
+  h5{
     font-size: 2.5rem;
+    font-weight: 900;
   }
-  p{
-    margin: 16px;
+  h6{
+    font-size: 1.5rem;
   }
-  
-  .col1{
-    text-align: center;
-    p{
-      font-size: 19pt;
+  h5,h6{
+      text-align: center;
+    }
+
+  ul{
+    padding-left: 20px;
+    margin-bottom: 50px;
+    li{
+      font-size: 1rem;
     }
   }
-
-  .col2{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: 24px auto 12px auto;
-    flex-direction: column;
-
-    .pCard{
-      text-align: center;
+    
+    .card{
       margin: 24px 16px !important;
       padding: 60px 24px !important;
+      display: flex;
+      flex-direction: column;
+
+      -webkit-box-shadow: 0px 3px 4px 3px rgba(219, 219, 219, 0.5);
+      -moz-box-shadow: 0px 3px 4px 3px rgba(219, 219, 219, 0.5);
+      box-shadow: 0px 3px 4px 3px rgba(219, 219, 219, 0.5);
 
       background: white;
-      :nth-of-type(2){
-          -webkit-box-shadow: 0px 3px 4px 3px rgba(219, 219, 219, 0.5);
-          -moz-box-shadow: 0px 3px 4px 3px rgba(219, 219, 219, 0.5);
-          box-shadow: 0px 3px 4px 3px rgba(219, 219, 219, 0.5);
+
+      h2{
+        margin-bottom: 20px;
       }
 
-      h1{
-        color: black;
-        font-weight: 900;
-        font-size: 40pt;
-        letter-spacing: 4px
-      }
-      h4{
-        font-weight: 900;
+      .card-body{
+        display: flex;
+        flex-direction: column;
       }
 
+      button{
+        align-self: center;
+      }
     }
 
-    .pTitle1{ color: #0080F7 !important }
-    .pTitle2{ color: #FF5766 !important }
-    .pTitle3{ color: #FFBE7C !important }
+    .special{
+      background: #0079ff;
+      color: white;
 
-  }
+      -webkit-box-shadow: 0px 3px 4px 3px rgba(219, 219, 219, 0.5);
+      -moz-box-shadow: 0px 3px 4px 3px rgba(219, 219, 219, 0.5);
+      box-shadow: none;
+
+      button{
+        border-color: white;
+        color: white;
+
+        &:hover{
+          background: white;
+          color: #0079ff;
+        }
+      }
+    }
+
+    .card:first-of-type .card-subtitle{ color: #0080F7 !important }
+    .card:nth-of-type(2) .card-subtitle{ color: white !important }
+    .card:nth-of-type(3) .card-title{ color: #ff5e62 !important; font-size: 2rem; margin-bottom: 2.5rem }
+    
 
   @media screen and ( min-width: 1200px ){
     max-width: 1200px
@@ -67,7 +93,7 @@ const Container1 = Styled.div`
       margin:0 auto;
     }
 
-    .col2{
+    .pricing{
       flex-direction: row;
 
       .pCard{
@@ -83,47 +109,56 @@ const Container1 = Styled.div`
 class Pricing extends React.Component {
   render() {
     return (
-      <Container1 className="animated fadeIn">
-        <Col className="col1">
-          <h1>Hello There !</h1>
-          <p>Sign up now and you will get more great features and deals</p>
-        </Col>
-
-        <Col className="col2">
-          <div className="pCard">
-            <h4 className="pTitle1">BASIC</h4>
-            <h2 className="price">Free</h2>
-            <p>Cross check user's profile with specific location</p>
-            <p>Know the diease status changing every year</p>
-
-            <Button color="primary" outline>
-              Get Started
-            </Button>
-          </div>
-
-          <div className="pCard">
-            <h4 className="pTitle2">STANDARD</h4>
-            <h2 className="price">3.99$</h2>
-            <p>Cross check user's profile with specific location</p>
-            <p>Know the diease status changing every year</p>
-
-            <Button color="primary" outline>
-              Get Started
-            </Button>
-          </div>
-
-          <div className="pCard">
-            <h4 className="pTitle3">PREMIUM</h4>
-            <h2 className="price">6.99$</h2>
-            <p>Cross check user's profile with specific location</p>
-            <p>Know the diease status changing every year</p>
-            <p>Notify user about any outbreak in nearby location</p>
-
-            <Button color="primary" outline>
-              Get Started
-            </Button>
-          </div>
-        </Col>
+      <Container1 className="animated fadeIn justify-content-sm-center">
+        <Row className="text-center">
+          <Col xs={{ size: 10, offset: 1 }}>
+            <h1>Hello There !</h1>
+            <p>Sign up now and you will get more great features and deals</p>
+          </Col>
+        </Row>
+        <Container>
+          <CardGroup>
+            <Card>
+              <CardBody>
+                <CardSubtitle>BASIC</CardSubtitle>
+                <CardTitle>FREE</CardTitle>
+                <ul>
+                  <li>Have access to one location status</li>
+                  <li>Save one plan to your profile</li>
+                </ul>
+                <Button color="primary" outline>
+                  Get Started
+                </Button>
+              </CardBody>
+            </Card>
+            <Card className="special">
+              <CardBody>
+                <CardSubtitle>PREMIUM</CardSubtitle>
+                <CardTitle>3.99$</CardTitle>
+                <ul>
+                  <li>Have access to many location status</li>
+                  <li>Save many plans to your profile</li>
+                </ul>
+                <Button color="primary" outline>
+                  Get Started
+                </Button>
+              </CardBody>
+            </Card>
+            <Card>
+              <CardBody>
+                <CardTitle>ENTERPRISE</CardTitle>
+                <ul>
+                  <li>Access to our API</li>
+                  <li>24/7 support</li>
+                  <li>Custom data visualization</li>
+                </ul>
+                <Button color="primary" outline>
+                  Call for Price
+                </Button>
+              </CardBody>
+            </Card>
+          </CardGroup>
+        </Container>
       </Container1>
     );
   }

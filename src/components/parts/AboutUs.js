@@ -7,8 +7,8 @@ import jean from "../../assets/members/jean.png";
 import khanh from "../../assets/members/khanh.png";
 import anh from "../../assets/members/anh.png";
 import anu from "../../assets/members/anu.png";
-import kunal from "../../assets/members/jean.png";
-import andra from "../../assets/members/jean.png";
+import kunal from "../../assets/members/kunal.png";
+import andra from "../../assets/members/andra.png";
 
 const StyledAbout = Styled.div`
   background: #F1F1F1;
@@ -22,15 +22,23 @@ const StyledAbout = Styled.div`
   img{
     width: 150px !important;
     height: 150px !important;
+    object-fit: cover
   }
 
   .wrap .row{
     margin-top: 0 !important;
   }
 
-
-
-
+  @media only screen and (max-width: 768px) {
+    .card-body{
+      h5,h6{
+        text-align: center;
+      }
+      ul{
+        justify-content: center;
+      }
+    }
+  }
 `;
 
 //
@@ -65,7 +73,7 @@ export default class AboutUS extends React.Component {
               <AboutCard
                 link={anh}
                 title="Anh Pham"
-                subtitle="UX Designer/Business Strategist"
+                subtitle="UX Designer"
                 linkedLink=""
                 alt="Anh Pham"
               />

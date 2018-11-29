@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PlannerDisplay from "../Planner/containers/PlannerDisplay";
-import { Row, Col, Button } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
 import plan from "../../assets/plan@1x.svg";
 import { Redirect } from "react-router-dom";
 import ScrollableAnchor, { goToAnchor } from "react-scrollable-anchor";
@@ -13,63 +13,67 @@ class PlannerPage extends Component {
     super();
     this.state = {
       isNewPlan: null,
-      redirect:false
+      redirect: false
     };
     this.handleButtons = this.handleButtons.bind(this);
   }
 
   handleButtons(e) {
     // if (sessionStorage.getItem("userData")) {
-      if (e.target.id === "newPlan") {
-          this.setState({ isNewPlan: true });
-          goToAnchor("section1");
-      } else if (e.target.id === "editPlan") {
-        this.setState({ isNewPlan: false });
-      }
+    if (e.target.id === "newPlan") {
+      this.setState({ isNewPlan: true });
+      goToAnchor("section1");
+    } else if (e.target.id === "editPlan") {
+      this.setState({ isNewPlan: false });
+    }
     // } else {
-      // this.setState({ redirect: true })
+    // this.setState({ redirect: true })
     // }
   }
 
   render() {
-    if(this.state.redirect){
-      return <Redirect to='/Signin' />;
+    if (this.state.redirect) {
+      return <Redirect to="/Signin" />;
     }
     return (
       <React.Fragment>
         <section className="plannerLanding">
-          <Row className="landing">
-            <Col sm="12" md={{ size: 5, offset: 1 }}>
-              <h1>Start Now</h1>
-              <p>Pick your location and prepare your trip with simple steps.</p>
-              <form>
-                <Button
-                  color="primary"
-                  key="newPlan"
-                  id="newPlan"
-                  onClick={this.handleButtons}
-                >
-                  Create New
-                </Button>
-                <Button
-                  color="primary"
-                  outline
-                  key="editPlan"
-                  id="editPlan"
-                  onClick={this.handleButtons}
-                >
-                  Edit Plan
-                </Button>
-              </form>
-            </Col>
-            <Col sm="12" md={{ size: 5 }}>
-              <img src={plan} alt="Plan your trip" />
-            </Col>
-          </Row>
+          <Container>
+            <Row className="landing">
+              <Col sm="12" md={{ size: 5, offset: 1 }}>
+                <h1>Start Now</h1>
+                <p>
+                  Pick your location and prepare your trip with simple steps.
+                </p>
+                <form>
+                  <Button
+                    color="primary"
+                    key="newPlan"
+                    id="newPlan"
+                    onClick={this.handleButtons}
+                  >
+                    Create New
+                  </Button>
+                  <Button
+                    color="primary"
+                    outline
+                    key="editPlan"
+                    id="editPlan"
+                    onClick={this.handleButtons}
+                  >
+                    Edit Plan
+                  </Button>
+                </form>
+              </Col>
+              <Col sm="12" md={{ size: 5 }}>
+                <img src={plan} alt="Plan your trip" />
+              </Col>
+            </Row>
+          </Container>
         </section>
-          <ScrollableAnchor id={"section1"}>
-            <section>{this.state.isNewPlan && <PlannerDisplay />}</section>
-          </ScrollableAnchor>
+        <ScrollableAnchor id={"section1"}>
+          <section>{this.state.isNewPlan && <PlannerDisplay />}</section>
+        </ScrollableAnchor>
       </React.Fragment>
     );
   }

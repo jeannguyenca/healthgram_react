@@ -1,15 +1,13 @@
-import React from 'react'
-import Styled from 'styled-components';
-import { Container, Col } from 'reactstrap'
+import React from "react";
+import Styled from "styled-components";
+import { Container, Col, Row } from "reactstrap";
 
-import Pill from '../../assets/pill@1x.svg'
-import Bag from '../../assets/business@1x.svg'
-import Pie from '../../assets/pie@1x.svg'
+import Pill from "../../assets/pill@1x.svg";
+import Bag from "../../assets/business@1x.svg";
+import Pie from "../../assets/pie@1x.svg";
 
-import AboutUs from '../parts/AboutUs'
-import ContactUs from '../parts/ContactUs'
-
-
+import AboutUs from "../parts/AboutUs";
+import ContactUs from "../parts/ContactUs";
 
 const Container1 = Styled.div`
   padding: 16px auto;
@@ -75,49 +73,53 @@ const Container1 = Styled.div`
 
 
 
-`
+`;
 
 class Partner extends React.Component {
-  render () {
-    return(
+  render() {
+    return (
       <Container1 className="animated fadeIn">
-        <Container className="wrap">
-          <Col className="col1">
-            <h1>Partner With Us</h1>
-            <p>Why partner with us?</p>
-          </Col>
+        <Container className="wrap text-center">
+          <Row>
+            <Col xs={{ size: 10, offset: 1 }}>
+              <h1>Partner With Us</h1>
+              <p>Why partner with us?</p>
+            </Col>
+          </Row>
 
-          <Col className="col2">
-            <div className="pCard">
-              <figure>
-                <img src={Pill} alt="Personal"/>
-              </figure>
-              <p>Provide services specialized in allerges and dieases</p>
-            </div>
-
-            <div className="pCard">
-              <figure>
-                <img src={Bag} alt="Personal"/>
-              </figure>
-              <p>Get your potential customers around the world</p>
-            </div>
-
-            <div className="pCard">
-              <figure>
-                <img src={Pie} alt="Personal"/>
-              </figure>
-              <p>Expand your clinic business in many aspects</p>
-            </div>
-          </Col>
+          <Row>
+            <Col xs={{ size: 10, offset: 1 }} md={{size:4, offset: 0}}>
+              <div className="pCard">
+                <figure>
+                  <img src={Pill} alt="Personal" />
+                </figure>
+                <p>Provide services specialized in allerges and dieases</p>
+              </div>
+            </Col>
+            <Col xs={{ size: 10, offset: 1 }} md={{size:4, offset: 0}}>
+              <div className="pCard">
+                <figure>
+                  <img src={Bag} alt="Personal" />
+                </figure>
+                <p>Get your potential customers around the world</p>
+              </div>
+            </Col>
+            <Col xs={{ size: 10, offset: 1 }} md={{size:4, offset: 0}}>
+              <div className="pCard">
+                <figure>
+                  <img src={Pie} alt="Personal" />
+                </figure>
+                <p>Expand your clinic business in many aspects</p>
+              </div>
+            </Col>
+          </Row>
         </Container>
 
-        <AboutUs></AboutUs>
+        <AboutUs />
 
-        <ContactUs></ContactUs>
-
+        <ContactUs />
       </Container1>
-    )
-
+    );
   }
 }
 

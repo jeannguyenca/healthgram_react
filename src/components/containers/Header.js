@@ -9,9 +9,7 @@ import {
   NavItem,
   NavLink,
   // UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,
-  Container,
-  Col,
-  Row
+  Container
 } from "reactstrap";
 import { NavLink as RRNavLink } from "react-router-dom";
 import Styled from "styled-components";
@@ -29,9 +27,7 @@ const AppBar = Styled(Navbar)`
 
   .container{
     padding: 0;
-    div{
-      padding: 0;
-    }
+    margin: 0;
   }
 
   .navbar{
@@ -61,6 +57,7 @@ const AppBar = Styled(Navbar)`
           color: white;
         }
       }
+
     }
   }
 
@@ -70,16 +67,15 @@ const AppBar = Styled(Navbar)`
   }
 
   .nav-item {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0 5px 0 5px;
     padding: 6px;
 
     .nl {
-      color: #0080F7 !important;
+      color: black;
         &: hover {
           padding-bottom: 0;
-          border-bottom: 1px solid #0080F7;
-          // color: blue !important;
+          color: #0079ff !important;
           transition: all .5s ease-in;
       }
     }
@@ -87,8 +83,11 @@ const AppBar = Styled(Navbar)`
   }
   .navbar-toggler{
     background-color: #0080F7;
-
+        color: black !important;
+    span{
+    }
   }
+
 
   .logoPart{
     .logoDesktop{
@@ -106,10 +105,12 @@ const AppBar = Styled(Navbar)`
 
 
 @media screen and ( min-width: 700px ){
+  .navbar-collapse{
+    justify-content: flex-end;
+  }
   .logoPart{
     .col{
       padding: 0;
-
     }
     .logoDesktop{
       display:initial;
@@ -129,7 +130,6 @@ const AppBar = Styled(Navbar)`
   .menuBar{
     display: none;
   }
-
   .navbar-nav{
     background-color: transparent;
   }
@@ -146,6 +146,11 @@ const AppBar = Styled(Navbar)`
   }
 
 }
+@media (min-width: 768px){
+  .navbar-expand-md {
+    padding: 0 !important;
+}
+
 `;
 
 export default class Example extends React.Component {
@@ -185,77 +190,71 @@ export default class Example extends React.Component {
   }
 
   render() {
-    const { headFontColor, headColor, isOpen } = this.state;
+    const { isOpen } = this.state;
     return (
       <Container fluid={true}>
-        <AppBar dark expand="md">
-          <Container>
-            <Col xs="2">
-              <NavbarBrand className="logoPart" href="/">
-                <Row>
-                  <Col>
-                    <figure className="logoMobile">
-                      <img src={logoMobile} alt=" Logo Mobile" />
-                    </figure>
-                    <figure className="logoDesktop">
-                      <img src={logoDesktop} alt=" Logo Desktop" />
-                    </figure>
-                  </Col>
-                </Row>
-              </NavbarBrand>
-            </Col>
-            <Col xs="5">
-              <NavbarToggler onClick={this.toggle} />
-              <Collapse isOpen={isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                  <NavItem>
-                    <NavLink
-                      className="nl"
-                      to="/Planner"
-                      activeClassName="current"
-                      tag={RRNavLink}
-                    >
-                      Planner
+        <Container>
+          <AppBar className="p-0" expand="md">
+            <NavbarBrand className="logoPart" href="/">
+              <figure className="logoMobile">
+                <img src={logoMobile} alt=" Logo Mobile" />
+              </figure>
+              <figure className="logoDesktop p-0">
+                <img src={logoDesktop} alt=" Logo Desktop" />
+              </figure>
+            </NavbarBrand>
+            {/* <NavbarToggler onClick={this.toggle} /> */}
+            <NavbarToggler onClick={this.toggle} className="mr-2" />
+
+            <Collapse isOpen={isOpen} navbar>
+              <Nav navbar>
+                <NavItem>
+                  <NavLink
+                    className="nl"
+                    to="/Planner"
+                    activeClassName="current"
+                    tag={RRNavLink}
+                  >
+                    Planner
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="nl"
+                    to="/Partner"
+                    activeClassName="current"
+                    tag={RRNavLink}
+                  >
+                    Partners
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="nl"
+                    to="/Pricing"
+                    activeClassName="current"
+                    tag={RRNavLink}
+                  >
+                    Pricing
+                  </NavLink>
+                </NavItem>
+                {sessionStorage.getItem("userData") ? (
+                  <NavItem className="signIn">
+                    <NavLink href="/Profile">
+                      <Button color="primary">Profile</Button>
                     </NavLink>
                   </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nl"
-                      to="/Partner"
-                      activeClassName="current"
-                      tag={RRNavLink}
-                    >
-                      Partners
+                ) : (
+                  <NavItem className="signIn">
+                    <NavLink href="/Signin">
+                      <Button color="primary">Sign in</Button>
                     </NavLink>
                   </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nl"
-                      to="/Pricing"
-                      activeClassName="current"
-                      tag={RRNavLink}
-                    >
-                      Pricing
-                    </NavLink>
-                  </NavItem>
-                  {sessionStorage.getItem("userData") ? (
-                    <NavItem className="signIn">
-                      <NavLink href="/Profile">
-                        <Button color="primary">Profile</Button>
-                      </NavLink>
-                    </NavItem>
-                  ) : (
-                    <NavItem className="signIn">
-                      <NavLink href="/Signin">
-                        <Button color="primary">Sign in</Button>
-                      </NavLink>
-                    </NavItem>
-                  )}
-                </Nav>
-              </Collapse>
-            </Col>
-          </Container>
-        </AppBar>
+                )}
+              </Nav>
+            </Collapse>
+          </AppBar>
+        </Container>
       </Container>
     );
   }

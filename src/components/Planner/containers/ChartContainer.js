@@ -44,18 +44,15 @@ class ChartContainer extends Component {
       mode: 'cors',
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
-        
+        Accept: "application/json"
       }
     })
       .then(data => data.json())
       .then(res => {
         if (!res.success) {
-          console.log("Cannot get it");
           this.setState({ error: res.error });
         } else {
           //diseases info
-          console.log("Finished");
           this.setState({ diseases: res.data[res.data.length - 1] });
 
           //disease values

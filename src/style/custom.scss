@@ -10,6 +10,10 @@ $theme-colors: (
   "warning": #ff5e62
 );
 
+.App{
+  overflow-x: hidden;
+}
+
 body {
   font-family: $font-family;
 }
@@ -38,7 +42,7 @@ h1{
 }
 
 .current{
-  border-bottom: 1px solid $primary;
+  color: $primary !important;
 }
 
 .chartContainter h1,

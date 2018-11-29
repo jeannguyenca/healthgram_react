@@ -169,15 +169,13 @@ export default class Footer extends React.Component {
           </IconList>
 
           <Container className="leftSize">
-            <Rlink to="/">
               <Col className="copyright">
                 <figure>
                   <h5>
-                    <span role="img">©️</span> 2018 HealthGram
+                  <span>&copy;</span> 2018 HealthGram
                   </h5>
                 </figure>
               </Col>
-            </Rlink>
           </Container>
         </Container>
       </Container1>

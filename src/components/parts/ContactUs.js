@@ -129,9 +129,8 @@ const TheInput = Styled.div`
 
 const StyledContact = Styled.div`
   margin: 0 auto;
-  // padding-top: 36px;
   height: auto;
-  // padding: 24px;
+  padding: 0 20px;
   background: white;
 
     .form{
@@ -168,19 +167,19 @@ export default class ContactUs extends React.Component {
 
           <Col lg={{ size: 5, offset: 2 }} className="form">
             <TheInput>
-              <div class="testInput">
+              <div className="testInput">
                 <input name="name" type="text" placeholder="Your Name*" />
                 <label> Your Name*</label>
               </div>
             </TheInput>
             <TheInput>
-              <div class="testInput">
+              <div className="testInput">
                 <input name="email" type="text" placeholder="Email*" />
                 <label>Email*</label>
               </div>
             </TheInput>
             <TheInput>
-              <div class="testInput">
+              <div className="testInput">
                 <Input
                   style={{ padding: "6px 6px 6px 0" }}
                   type="textarea"
