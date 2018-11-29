@@ -10,12 +10,9 @@ import {
   Col,
   Button,
   Form,
-  FormGroup,
-  Label,
   Input,
   Card,
-  CardBody,
-  CardTitle
+  CardBody
 } from "reactstrap";
 
 import "./Login.css";

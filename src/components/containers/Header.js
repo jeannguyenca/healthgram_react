@@ -11,6 +11,7 @@ import {
   // UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,
   Container
 } from "reactstrap";
+
 import { NavLink as RRNavLink } from "react-router-dom";
 import Styled from "styled-components";
 
@@ -41,9 +42,6 @@ const AppBar = Styled(Navbar)`
       flex-flow: row nowrap;
       padding: 0;
 
-      span {
-        color: ${props => props.headFontColor}
-      }
       .ad {
         display: none;
 
@@ -84,8 +82,6 @@ const AppBar = Styled(Navbar)`
   .navbar-toggler{
     background-color: #0080F7;
         color: black !important;
-    span{
-    }
   }
 
 
@@ -107,7 +103,9 @@ const AppBar = Styled(Navbar)`
 @media screen and ( min-width: 700px ){
   .navbar-collapse{
     justify-content: flex-end;
+    background: white;
   }
+  
   .logoPart{
     .col{
       padding: 0;
@@ -149,6 +147,10 @@ const AppBar = Styled(Navbar)`
 @media (min-width: 768px){
   .navbar-expand-md {
     padding: 0 !important;
+  }
+  .collapse{
+    background: none;
+  }
 }
 
 `;
@@ -194,7 +196,7 @@ export default class Example extends React.Component {
     return (
       <Container fluid={true}>
         <Container>
-          <AppBar className="p-0" expand="md">
+          <AppBar className="p-0 navbar navbar-light" expand="md">
             <NavbarBrand className="logoPart" href="/">
               <figure className="logoMobile">
                 <img src={logoMobile} alt=" Logo Mobile" />
@@ -203,9 +205,7 @@ export default class Example extends React.Component {
                 <img src={logoDesktop} alt=" Logo Desktop" />
               </figure>
             </NavbarBrand>
-            {/* <NavbarToggler onClick={this.toggle} /> */}
-            <NavbarToggler onClick={this.toggle} className="mr-2" />
-
+            <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav navbar>
                 <NavItem>

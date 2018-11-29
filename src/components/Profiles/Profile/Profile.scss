@@ -8,6 +8,19 @@ $theme-colors: (
   "warning": #ff5e62
 );
 
+.profile-jumbo{
+    margin-top: -100px;
+    padding: 0 !important;
+    height: 250px;
+    display: flex;
+    align-items: flex-end;
+    .container{
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+    }
+}
+
 .logout{
     float:right;
     margin:10px 0px;
@@ -15,4 +28,32 @@ $theme-colors: (
 h4{
     font-weight: 900;
     color: #101010;
+}
+
+.round{
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    position: relative;
+    bottom: -50px;
+
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: white;
+    }
+}
+.card-title{
+    margin-top: 20px;
+}
+
+.card-body{
+    padding: 0 !important;
+    .loginjumbo{
+        color: white;
+        background: $primary;
+        padding: 10px 0;
+    }
 }

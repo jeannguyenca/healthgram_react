@@ -14,12 +14,10 @@ import {
   Col,
   Button,
   Card,
-  CardText,
   CardBody,
   CardTitle
 } from "reactstrap";
 import JumbotronProfile from "./Jumbo";
-import { CardLink } from "reactstrap";
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -94,9 +92,9 @@ class Profile extends Component {
     return (
       <div className="profile">
         <JumbotronProfile name={this.state.name} />
-        <Container>
+        <Container className="mb-5">
           <Row className="justify-content-sm-center mb-3 p-0">
-            <Col xs="12" lg="12" className="text-left">
+            <Col xs="12" md={{ size: 10, offset: 2 }} className="text-left">
               <Button
                 color="primary"
                 outline
@@ -132,7 +130,7 @@ class Profile extends Component {
           </Row>
 
           <Row className="justify-content-sm-center mb-0 mt-4">
-            <Col xs="12" lg="7" className="text-left">
+            <Col xs="12" md="5" className="text-left">
               <div className="title-profile text-uppercase mb-3">
                 <h4>Basic Info</h4>
               </div>
@@ -182,25 +180,20 @@ class Profile extends Component {
             </Col>
             <Col
               xs="12"
-              lg="5"
+              md="3"
               className="member justify-content-center align-self-center text-center"
             >
               <Card>
                 <CardBody>
-                  <CardTitle className="standard">
-                    Upgrade your plan to
-                  </CardTitle>
+                  <CardTitle className="standard">Membership</CardTitle>
                   <div className="loginjumbo colw mb-4">
-                    <CardLink href="#">
-                      <h2 className="font-weight-bold">Premium</h2>
-                    </CardLink>
+                    <h2 className="font-weight-bold">Premium</h2>
                   </div>
-                  <CardText>Unlock the potential</CardText>
-                  <ul>
-                    <li>Manage Multiple Profiles</li>
-                    <li>Manage Multiple Profiles</li>
+                  <ul className="text-left">
+                    <li>Have access to many location status</li>
+                    <li>Save many plans to your profile</li>
                   </ul>
-                  <Button className="btn-outline-dark btn bordercurve">
+                  <Button color="primary" className="btn bordercurve mb-4" outline>
                     Change Plan
                   </Button>
                 </CardBody>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Nav, NavItem, NavLink, Container, Col } from "reactstrap";
 import Styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const IconList = Styled(Nav)`
   height: 52px;
@@ -63,9 +62,6 @@ const IconList = Styled(Nav)`
   }
 `;
 
-const Rlink = Styled(Link)`
-  text-decoration: none !important;
-`;
 
 const Container1 = Styled(Container)`
   background-color: #3D3D3D;
@@ -95,6 +91,7 @@ const Container1 = Styled(Container)`
         margin: 0;
         padding: 0;
         margin-top: 10px;
+        text-align: center;
     }
 
   }
@@ -109,6 +106,10 @@ const Container1 = Styled(Container)`
           justify-content: flex-start;
           align-items: center;
       }
+      .copyright{
+        text-align: left;
+      }
+
 
       .rightSize{
       }
@@ -169,13 +170,13 @@ export default class Footer extends React.Component {
           </IconList>
 
           <Container className="leftSize">
-              <Col className="copyright">
-                <figure>
-                  <h5>
+            <Col className="copyright">
+              <figure>
+                <h5>
                   <span>&copy;</span> 2018 HealthGram
-                  </h5>
-                </figure>
-              </Col>
+                </h5>
+              </figure>
+            </Col>
           </Container>
         </Container>
       </Container1>

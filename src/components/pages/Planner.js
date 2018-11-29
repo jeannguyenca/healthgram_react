@@ -40,7 +40,7 @@ class PlannerPage extends Component {
         <section className="plannerLanding">
           <Container>
             <Row className="landing">
-              <Col sm="12" md={{ size: 5, offset: 1 }}>
+              <Col sm="12" md={{ size: 6 }}>
                 <h1>Start Now</h1>
                 <p>
                   Pick your location and prepare your trip with simple steps.
@@ -65,7 +65,7 @@ class PlannerPage extends Component {
                   </Button>
                 </form>
               </Col>
-              <Col sm="12" md={{ size: 5 }}>
+              <Col sm="12" md={{ size: 6 }}>
                 <img src={plan} alt="Plan your trip" />
               </Col>
             </Row>
