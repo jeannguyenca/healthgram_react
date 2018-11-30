@@ -10,6 +10,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-google-maps": "^9.4.5",
+    "react-https-redirect": "^1.0.11",
     "react-icons": "^3.2.2",
     "react-liquid-gauge": "^1.2.4",
     "react-router": "^4.3.1",
