@@ -322,8 +322,7 @@ export default class Home2 extends Component {
               <Col lg="5" className="info">
                 <h1 className="homeTitle">Ready for your new trip?</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Perferendis tempora incidunt quasi, fuga magnam mollitia.
+                  Are you ready for safe travel with your family and friends? Let’s explore your chosen destination.
                 </p>
                 <Rlink to="/Planner">
                   <Button color="primary">Plan Your Trip</Button>

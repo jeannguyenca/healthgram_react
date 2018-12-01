@@ -14,12 +14,9 @@ $theme-colors: (
     height: 250px;
     display: flex;
     align-items: flex-end;
-    .container{
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-    }
 }
+.profile{
+
 
 .logout{
     float:right;
@@ -27,16 +24,35 @@ $theme-colors: (
 }
 h4{
     font-weight: 900;
-    color: #101010;
+    color: #6c757d;
+}
+
+.profile-jumbo .row{
+    position: relative;
+    bottom: -100px;
+
+    div:nth-of-type(2){
+        align-self: center;
+    }
+    @media (max-width: 767.98px) { 
+        flex-direction: column;
+        text-align: center;
+        bottom: -50px;
+
+        div:first-of-type{
+            align-self: center;
+            .round{
+                margin: 0 auto;
+            }
+        }
+    }
+
 }
 
 .round{
     width: 150px;
     height: 150px;
-    margin-right: 20px;
-    position: relative;
-    bottom: -50px;
-
+    
     img{
         object-fit: cover;
         width: 100%;
@@ -56,4 +72,5 @@ h4{
         background: $primary;
         padding: 10px 0;
     }
+}
 }

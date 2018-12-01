@@ -84,12 +84,9 @@ class WhatIs extends React.Component {
         <Col className="col1">
           <h1>What is HealthGram ?</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Architecto, est rem molestiae nam voluptatibus a consequuntur ad
-            debitis atque quasi, aperiam odit nobis natus commodi veniam eos at
-            animi recusandae quos aliquam? Minus, quae, eligendi! Atque eos
-            porro perspiciatis molestiae repellendus exercitationem assumenda
-            possimus nostrum.
+            HealthGram is the platform that makes your life more simple and
+            secured. We provide accurate health information based on location
+            and statistics. This is one step closer to protect your loved ones.
           </p>
         </Col>
 

@@ -15,6 +15,8 @@ import {
 import { NavLink as RRNavLink } from "react-router-dom";
 import Styled from "styled-components";
 
+import profile from "../../assets/profile-user.svg";
+
 import logoMobile from "../../assets/logoMobile.png";
 import logoDesktop from "../../assets/logoDesktop.png";
 
@@ -136,12 +138,6 @@ const AppBar = Styled(Navbar)`
     padding: auto 6px
     margin: auto 6px;
   }
-  .signIn{
-    padding: 0px 5px;
-    margin-top: -3px;
-    width: 120px;
-    
-  }
 
 }
 @media (min-width: 768px){
@@ -152,6 +148,26 @@ const AppBar = Styled(Navbar)`
     background: none;
   }
 }
+
+  .signIn{
+    padding: 0px 5px;
+    align-self: flex-end;
+    margin-bottom: 5px;
+
+    .nav-link{
+      padding: 0 !important;
+    }
+    
+
+    img{
+      margin-top: -5px;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+
+    
+  }
 
 `;
 
@@ -241,7 +257,7 @@ export default class Example extends React.Component {
                 {sessionStorage.getItem("userData") ? (
                   <NavItem className="signIn">
                     <NavLink href="/Profile">
-                      <Button color="primary">Profile</Button>
+                      <img src={profile} alt="Avatar" />
                     </NavLink>
                   </NavItem>
                 ) : (

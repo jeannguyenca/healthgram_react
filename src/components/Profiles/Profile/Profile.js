@@ -97,7 +97,6 @@ class Profile extends Component {
             <Col xs="12" md={{ size: 10, offset: 2 }} className="text-left">
               <Button
                 color="primary"
-                outline
                 className="btn-primary bordercurve btn align-middle m-2"
                 onClick={this.handleSubmit}
               >

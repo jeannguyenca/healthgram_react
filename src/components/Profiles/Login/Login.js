@@ -42,6 +42,7 @@ const TheInput = Styled.div`
     input{
       border-bottom: 1px solid black;
       heigth: 50px;
+      border-radius: 0;
     }
 
     label {
@@ -175,11 +176,9 @@ class Login extends Component {
           <Row className="justify-content-sm-center mb-5">
             <Col xs="12" md={{ size: 5 }}>
               <div className="br-1">
-                <Card className="widthcard">
-                  {/* <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" /> */}
+                <Card className="widthcard p-5">
                   <CardBody>
                     <h1>Sign in</h1>
-
                     <Alert className="alert" style={style} color="danger">
                       <div className="block">{this.state.usernameError}</div>
                       <div className="block">{this.state.passwordError}</div>
@@ -187,32 +186,33 @@ class Login extends Component {
 
                     <Form>
                       <TheInput>
-                        <div class="testInput">
+                        <div className="testInput">
                           <Input
                             name="username"
                             type="text"
                             placeholder="Username"
                             onChange={this.onChange}
                           />
-                          <label> Your Name*</label>
+                          <label> Username*</label>
                         </div>
                       </TheInput>
                       <TheInput>
-                        <div class="testInput">
+                        <div className="testInput">
                           <Input
                             name="password"
                             type="password"
                             placeholder="Password"
                             onChange={this.onChange}
                           />
-                          <label> Your password*</label>
+                          <label> Password*</label>
                         </div>
                       </TheInput>
                       <Button
                         color="primary"
                         outline
                         type="submit"
-                        onClick={this.login}>
+                        onClick={this.login}
+                      >
                         Sign In
                       </Button>
                     </Form>
