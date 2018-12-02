@@ -8,7 +8,6 @@ const Container1 = Styled.div`
   margin: 24px auto 0 auto;
   padding-top: 50px;
   padding-bottom: 50px;
-  // background: #F0F1F1;
 
   p{
     font-size: 16px;
@@ -74,7 +73,7 @@ const Container1 = Styled.div`
         'image header'
         'image content';
       grid-template-columns: 50%;
-      grid-template-rows: 100px 1fr;
+      grid-template-rows: auto 1fr;
       grid-gap: 10px;
       margin: 50px auto;
   
@@ -127,7 +126,7 @@ class HowIt extends React.Component {
           <Col className="col1">
             <h1>How it works ?</h1>
             <p>
-              With just a few simple steps, you can prepare for you trip more
+              With just a few simple steps, you can prepare for your trip more
               safe and fun.
             </p>
           </Col>

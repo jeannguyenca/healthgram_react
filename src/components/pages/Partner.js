@@ -93,7 +93,7 @@ class Partner extends React.Component {
                 <figure>
                   <img src={Pill} alt="Personal" />
                 </figure>
-                <p>Provide services specialized in allerges and dieases</p>
+                <p>Provide services specialized in allergies and diseases</p>
               </div>
             </Col>
             <Col xs={{ size: 10, offset: 1 }} md={{size:4, offset: 0}}>

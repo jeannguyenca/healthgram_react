@@ -12,7 +12,7 @@ import {
 
 const Container1 = Styled.div`
   padding: 16px auto;
-  margin: 140px auto !important;
+  margin: 80px auto 200px auto !important;
   
   h5{
     font-size: 2.5rem;

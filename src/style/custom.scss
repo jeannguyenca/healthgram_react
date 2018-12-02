@@ -12,6 +12,7 @@ $theme-colors: (
 
 .App{
   overflow-x: hidden;
+  line-height: 2rem;
 }
 
 body {
@@ -41,8 +42,19 @@ h1{
   color: $primary !important;
 }
 
+h1+p{
+  margin-top: 1.5rem;
+}
+
 .current{
   color: $primary !important;
+}
+
+.sCard, .pCard{
+  p{
+    max-width: 280px;
+    margin: 0 auto;
+  }
 }
 
 .chartContainter h1,

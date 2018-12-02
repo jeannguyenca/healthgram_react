@@ -1,6 +1,6 @@
 import React from "react";
 import Styled from "styled-components";
-import { Col } from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 import Personal from "../../assets/person_icon@1x.svg";
 import Global from "../../assets/global_icon@1x.svg";
@@ -81,40 +81,47 @@ class WhatIs extends React.Component {
   render() {
     return (
       <Container1>
-        <Col className="col1">
-          <h1>What is HealthGram ?</h1>
-          <p>
-            HealthGram is the platform that makes your life more simple and
-            secured. We provide accurate health information based on location
-            and statistics. This is one step closer to protect your loved ones.
-          </p>
-        </Col>
+        <Row>
+          <Col className="col1" xs={{ size: 10, offset: 1 }}>
+            <h1>What is HealthGram ?</h1>
+            <p>
+              HealthGram is the platform that makes your life more simple and
+              secured. We provide accurate health information based on location
+              and statistics. This is one step closer to protect your loved
+              ones.
+            </p>
+          </Col>
+        </Row>
 
-        <Col className="col2">
-          <div className="sCard">
-            <figure>
-              <img src={Personal} alt="Personal" />
-            </figure>
-            <h4>Personal Allergies</h4>
-            <p>Cross check user's profile with specifuc location</p>
-          </div>
-
-          <div className="sCard">
-            <figure>
-              <img src={Global} alt="Global" />
-            </figure>
-            <h4>Global Diseases</h4>
-            <p>Know the diease status changing every year</p>
-          </div>
-
-          <div className="sCard">
-            <figure>
-              <img src={Notification} alt="Notification" />
-            </figure>
-            <h4>Notification</h4>
-            <p>Notify user about any outbreak in nearby location</p>
-          </div>
-        </Col>
+        <Row>
+          <Col xs={{ size: 10, offset: 1 }} md={{ size: 4, offset: 0 }}>
+            <div className="sCard text-center">
+              <figure>
+                <img src={Personal} alt="Personal" />
+              </figure>
+              <h4>Personal Allergies</h4>
+              <p>Cross check user's profile with specific location</p>
+            </div>
+          </Col>
+          <Col xs={{ size: 10, offset: 1 }} md={{size:4, offset: 0}}>
+            <div className="sCard text-center">
+              <figure>
+                <img src={Global} alt="Global" />
+              </figure>
+              <h4>Global Diseases</h4>
+              <p>Know the diease status changing every year</p>
+            </div>
+          </Col>
+          <Col xs={{ size: 10, offset: 1 }} md={{size:4, offset: 0}}>
+            <div className="sCard text-center">
+              <figure>
+                <img src={Notification} alt="Notification" />
+              </figure>
+              <h4>Notification</h4>
+              <p>Notify user about any outbreak in nearby location</p>
+            </div>
+          </Col>
+        </Row>
       </Container1>
     );
   }
