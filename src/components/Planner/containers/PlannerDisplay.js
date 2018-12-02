@@ -49,7 +49,7 @@ class PlannerDisplay extends Component {
                 ref={this.inputRef}
                 type="text"
                 onChange={this.onChangeText}
-                placeholder="Enter a country"
+                placeholder="E.g. Canada, China"
               />
               <Button color="primary" key="search">
                 Submit

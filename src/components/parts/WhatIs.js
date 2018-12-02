@@ -109,7 +109,7 @@ class WhatIs extends React.Component {
                 <img src={Global} alt="Global" />
               </figure>
               <h4>Global Diseases</h4>
-              <p>Know the diease status changing every year</p>
+              <p>Know the diseases status changing every year</p>
             </div>
           </Col>
           <Col xs={{ size: 10, offset: 1 }} md={{size:4, offset: 0}}>
