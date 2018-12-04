@@ -132,7 +132,7 @@ class Pricing extends React.Component {
             <Card className="special">
               <CardBody>
                 <CardSubtitle>PREMIUM</CardSubtitle>
-                <CardTitle>3.99$</CardTitle>
+                <CardTitle>$3.99</CardTitle>
                 <ul>
                   <li>Have access to many location status</li>
                   <li>Save many plans to your profile</li>
