@@ -204,12 +204,12 @@ export default class Example extends React.Component {
           headFontColor: "hsla(100,100%,100%,.8)",
           mobColor: "hsla(0, 0%, 0%, 0)"
         });
-    //}
-    //}
   };
 
   componentDidMount() {
-    this.setState({ lastScrollY: window.scrollY });
+    this.setState({ 
+      lastScrollY: window.scrollY,
+    });
     window.addEventListener("scroll", this.handleScroll);
   }
 
@@ -236,7 +236,6 @@ export default class Example extends React.Component {
                     to="/Planner"
                     activeClassName="current"
                     tag={RRNavLink}
-                    onClick={this.toggle}
                   >
                     Planner
                   </NavLink>
@@ -247,7 +246,6 @@ export default class Example extends React.Component {
                     to="/Partner"
                     activeClassName="current"
                     tag={RRNavLink}
-                    onClick={this.toggle}
                   >
                     Partners
                   </NavLink>
@@ -258,14 +256,13 @@ export default class Example extends React.Component {
                     to="/Pricing"
                     activeClassName="current"
                     tag={RRNavLink}
-                    onClick={this.toggle}
                   >
                     Pricing
                   </NavLink>
                 </NavItem>
                 {sessionStorage.getItem("userData") ? (
                   <NavItem className="signIn">
-                    <NavLink href="/Profile" onClick={this.toggle}>
+                    <NavLink href="/Profile">
                       <img src={profile} alt="Avatar" />
                     </NavLink>
                   </NavItem>
