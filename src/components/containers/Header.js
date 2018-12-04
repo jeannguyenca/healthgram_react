@@ -82,8 +82,10 @@ const AppBar = Styled(Navbar)`
 
   }
   .navbar-toggler{
-    background-color: #0080F7;
-        color: black !important;
+    // background-color: #0080F7;
+    border: none !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
   }
 
 
@@ -100,12 +102,16 @@ const AppBar = Styled(Navbar)`
     }
   }
 
+  .navbar-collapse{
+  }
+
 
 
 @media screen and ( min-width: 700px ){
   .navbar-collapse{
     justify-content: flex-end;
     background: white;
+
   }
   
   .logoPart{
@@ -230,6 +236,7 @@ export default class Example extends React.Component {
                     to="/Planner"
                     activeClassName="current"
                     tag={RRNavLink}
+                    onClick={this.toggle}
                   >
                     Planner
                   </NavLink>
@@ -240,6 +247,7 @@ export default class Example extends React.Component {
                     to="/Partner"
                     activeClassName="current"
                     tag={RRNavLink}
+                    onClick={this.toggle}
                   >
                     Partners
                   </NavLink>
@@ -250,13 +258,14 @@ export default class Example extends React.Component {
                     to="/Pricing"
                     activeClassName="current"
                     tag={RRNavLink}
+                    onClick={this.toggle}
                   >
                     Pricing
                   </NavLink>
                 </NavItem>
                 {sessionStorage.getItem("userData") ? (
                   <NavItem className="signIn">
-                    <NavLink href="/Profile">
+                    <NavLink href="/Profile" onClick={this.toggle}>
                       <img src={profile} alt="Avatar" />
                     </NavLink>
                   </NavItem>
